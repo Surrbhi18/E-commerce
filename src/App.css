@@ -1,0 +1,42 @@
+/*Navbar*/
+.navbar-nav a{
+  font-size: 18px;
+}
+
+.cardContainer{
+  width:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card-containers{
+  width:100%;
+  display: grid;
+  grid-template-columns: 7fr 1fr 1fr;
+  padding: 10px 10px 10px 10px;
+}
+.img{
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-images{
+  margin-top: 12%;
+  width: 70%;
+  transform :rotate(18deg);
+  /* position: absolute; */
+}
+.row{
+  text-align: center;
+}
+.cent{
+  text-align: center;
+  margin-top: 5px;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.pd-0{
+  padding-top: 5%;
+}
