@@ -1,26 +1,24 @@
-import React, {useState, useEffect} from 'react';
+
+import React, {useState, useEffect, useRef} from 'react';
 import { NavLink } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import Data from './data.json';
 
 const Products = () => {
     const[data, setData] = useState([]);
-    const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
-    let componentMounted = true;
+    const componentMounted = useRef(true);
 
 useEffect(() => {
     const getProducts = async () => {
         setLoading(true);
-        const response = await fetch("https://fakestoreapi.com/products");
-        if(componentMounted){
-            setData(await response.clone().json());
-            setFilter(await response.json());
+        if(componentMounted.current){
+            setData(Data);
             setLoading(false);
-            console.log(filter);
 
         }
         return () => {
-            componentMounted = false;
+            componentMounted.current = false;
         }
     }
   getProducts();
@@ -48,30 +46,17 @@ useEffect(() => {
       );
   }
 
-  const filterProduct = (cat) => {
-      const updatedList = data.filter((x)=>x.category === cat);
-      setFilter(updatedList);
-  }
-
   const ShowProducts= () => {
       return(
           <div>
-             <div className="buttons d-flex justify-content-center mb-5 pb-5">
-         <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>ALL</button><span> </span>
-         <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing" )}>Women's Clothing</button><span> </span>
-         <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing" )}>Men's Clothing</button><span> </span>
-         <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery" )}>Jewelery</button><span> </span>
-         <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics" )}>Electronics</button><span> </span>
-      </div>
-
         <div className='cardContainer'>
-        {filter.map((product)=>{
+        {data && data.map((product)=>{
         
         return(
              <div key={product.id}> 
                   <div className="col-md-8 mb-4">              
                       <div className="card h-100 text-centre p-4" key={product.id}>
-                      <img src={product.image} class="card-img-top" 
+                      <img src={product.img} className="card-img-top" 
                           alt={product.title} height="250px"/>
                       <div className="card-body">
                       <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
@@ -96,13 +81,7 @@ useEffect(() => {
 
     return(
      <div>
-         <div className="container my-5 py-3">
-             <div className="row">
-                 <div className="col-12 mb-5">
-                     <h1 className="display-6 fw-bolder text-center">Latest Products</h1>
-                     <hr />
-                 </div>
-             </div>
+         <div className="container my-4 py-2">
              <div className="row justify-content-centre">
                  {loading ? <Loading/>:<ShowProducts/>}
              </div>

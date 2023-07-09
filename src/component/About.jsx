@@ -3,7 +3,7 @@ import React from "react";
 const About = () => 
 {
     return(
-     <div>
+     <div className="abou" height = "500px" width = "410px">
          <h1>Hola Amigos</h1>
 <p> Humans are the best creation, and each person is exclusive. Thus, writing about myself, I’m here to express myself that what I see, what I experience and what I plan for my life. I try myself to be modest, passionate, devoted, hardworking and honest. </p>
 <div class="row">

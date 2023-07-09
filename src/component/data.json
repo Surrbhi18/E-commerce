@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "img": "assets/p1.jpg",
+    "title": "Banarasi saree",
+    "price": 1500,
+    "description": "A beautiful Banarasi saree with intricate design",
+    "rating": 4.5
+  },
+  {
+    "id": 2,
+    "img": "assets/p3.jpg",
+    "title": "Kanjeevaram saree",
+    "price": 2500,
+    "description": "A stunning Kanjeevaram saree with rich colors",
+    "rating": 4.8
+  },
+  {
+    "id": 3,
+    "img": "assets/p5.jpg",
+    "title": "Chanderi saree",
+    "price": 1700,
+    "description": "An elegant Chanderi saree for special occasions",
+    "rating": 4.2
+  },
+  {
+    "id": 4,
+    "img": "assets/p6.jpg",
+    "title": "Bandhani saree",
+    "price": 2000,
+    "description": "A vibrant Bandhani saree with traditional patterns",
+    "rating": 4.7
+  },
+  {
+    "id": 5,
+    "img": "assets/p7.jpeg",
+    "title": "Paithani saree",
+    "price": 1200,
+    "description": "A classic Paithani saree with golden zari work",
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "img": "assets/p8.jpeg",
+    "title": "Georgette saree",
+    "price": 1000,
+    "description": "A lightweight Georgette saree perfect for daily wear",
+    "rating": 4.3
+  },
+  {
+    "id": 7,
+    "img": "assets/p9.jpeg",
+    "title": "Linen saree",
+    "price": 3500,
+    "description": "A trendy Linen saree with a modern touch",
+    "rating": 4.4
+  },
+  {
+    "id": 8,
+    "img": "assets/p10.jpeg",
+    "title": "Jamdani saree",
+    "price": 1500,
+    "description": "A traditional Jamdani saree with intricate weaving",
+    "rating": 4.9
+  },
+  {
+    "id": 9,
+    "img": "assets/p11.jpeg",
+    "title": "Sambalpuri saree",
+    "price": 1200,
+    "description": "A handwoven Sambalpuri saree from Odisha",
+    "rating": 4.1
+  },
+  {
+    "id": 10,
+    "img": "assets/p12.jpeg",
+    "title": "Mysore silk saree",
+    "price": 1100,
+    "description": "A luxurious Mysore silk saree with a soft texture",
+    "rating": 4.7
+  },
+  {
+    "id": 11,
+    "img": "assets/p13.jpeg",
+    "title": "Patola saree",
+    "price": 1600,
+    "description": "A traditional Patola saree with double ikat technique",
+    "rating": 4.8
+  },
+  {
+    "id": 12,
+    "img": "assets/p14.jpeg",
+    "title": "Baluchari saree",
+    "price": 2700,
+    "description": "An exquisite Baluchari saree with intricate pallu design",
+    "rating": 4.6
+  }
+]

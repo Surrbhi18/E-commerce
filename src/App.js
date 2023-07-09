@@ -7,7 +7,7 @@ import Product from './component/Product';
 import Cart from './component/Cart';
 import About from './component/About';
 import Contact from './component/Contact';
-
+import Auth from './component/Auth';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route exact path='/products' element={<Products/>} />
         <Route exact path='/product/:id' element={<Product/>} />
         <Route exact path='/about' element={<About/>} />
+        <Route path="/auth" element={<Auth />} />
         <Route exact path='/contact' element={<Contact/>} />
         <Route exact path='/cart' element={<Cart/>} />
       </Routes>

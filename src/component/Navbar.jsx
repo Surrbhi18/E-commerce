@@ -5,10 +5,10 @@ import {  useSelector } from "react-redux";
 const Navbar = () => {
     const state = useSelector ((state) => state.handleCart)
     return (
-        <div>
+        <div className='heroo'>
     <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 shadow-sm">
   <div className="container">
-    <NavLink className="navbar-brand fw-bold fs-4" to="#">Reo Collection</NavLink>
+    <NavLink className="navbar-brand fw-bold fs-4" to="#">Kripa Tex</NavLink>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -28,10 +28,8 @@ const Navbar = () => {
         </li>
       </ul>
        <div className="buttons"> 
-            <NavLink to="/login" className="btn  btn-outline-dark">
-              <i className="fa fa-sign-in me-1"></i><span> </span>Login</NavLink><span> </span> 
-              <NavLink to="/register" className="btn  btn-outline-dark">
-              <i className="fa fa-user-plus me-1 ms-2"></i><span> </span>Register</NavLink><span> </span>
+              <NavLink to="/auth" className="btn  btn-outline-dark">
+              <i className="fa fa-user-plus me-1 ms-2"></i><span> </span>Sign In</NavLink><span> </span>
               <NavLink to="/cart" className="btn  btn-outline-dark">
               <i className="fa fa-shopping-cart me-1 ms-2"></i><span> </span>Cart ({state.length})</NavLink>      
        </div>

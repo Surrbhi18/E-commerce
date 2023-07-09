@@ -1,12 +1,13 @@
+
 import React, {useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import {addCart} from '../redux/action';
 import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import Skeleton from 'react-loading-skeleton';
+import Data from './data.json';
 
 const Product = () => {
-
 
    const{id} = useParams();
    const[product, setProduct] = useState([]);
@@ -17,18 +18,16 @@ const Product = () => {
        dispatch(addCart(product));
    }
 
-   useEffect(() => {
+    useEffect(() => {
+    const getProductById = () => {
+      setLoading(true);
+      const selectedProduct = Data.find((data) => data.id === parseInt(id));
+      setProduct(selectedProduct);
+      setLoading(false);
+    };
 
-   const getProduct = async () => {
-       setLoading(true);
-       const respone = await fetch(`https://fakestoreapi.com/products/${id}`);
-       console.log(respone);
-       setProduct(await respone.json());
-       setLoading(false);
-   }
-
-    getProduct();
-   },[])
+    getProductById();
+  }, [id]);
 
    const Loading = () => {
        return(
@@ -51,19 +50,16 @@ const Product = () => {
 
    const ShowProduct = () => {
        return(
-           <div>
+           <div className="row">
               <div className="col-md-6">
-              <img src={product.image} alt={product.title} height="400px" width="400px"/>
+              <img src={`${process.env.PUBLIC_URL}/${product.img}`} alt={product.title} height="350px" width="280px"/>
               </div>
-              <div className="col-md-6">
-                  <h4 className="text-uppercase text-black-50">
-                        {product.category}
-                  </h4>
-                  <h1 className="display-5">
+              <div className="col-md-4">
+                  <h1 className="display-5" height="50px" width="50px">
                      {product.title}
                   </h1>
                   <p className="lead fw-bolder">
-                      Rating {product.rating && product.rating.rate}
+                      Rating {product.rating}
                       <i className="fa fa-star"></i>
                   </p>
                   <h3 className="display fw-bold my-4">
@@ -87,10 +83,11 @@ const Product = () => {
         <div>
            <div className="container py-5">
                <div className="row py-4">
-                   {loading? <Loading/>:<ShowProduct/>};
+                   {loading? <Loading/>:<ShowProduct/>}
                </div>
            </div>
         </div>
     );
 } 
 export default Product;
+
